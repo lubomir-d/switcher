@@ -1,0 +1,298 @@
+.hide-input {
+  position: absolute;
+  top: 100vh;
+  left: 100vw;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.hide-input:checked ~ .switcher {
+  background-color: var(--bg-night);
+
+  .sun {
+    left: calc(100% - 12rem - 1.25rem);
+  }
+
+  .moon {
+    right: 0;
+  }
+
+  .clouds {
+    top: 150%
+  }
+
+  .stars {
+    top: 0;
+  }
+}
+
+.switcher {
+  position: relative;
+  display: flex;
+  width: 37rem;
+  height: 14.5rem;
+  background: var(--bg-day);
+  border-radius: 20rem;
+  box-shadow: inset .4rem .6rem .4rem 0 rgba(0, 0, 0, .5),
+              .2rem .4rem .4rem 0 #ffffff;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: background-color var(--transition);
+
+  .sun {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background: var(--sun);
+    box-shadow: inset .3rem .4rem .4rem 0 rgba(254, 255, 239, 1),
+                inset 0 -.5rem .4rem 0 rgba(200, 168, 54, 1),
+                0 0 0 3.5rem rgba(255, 255, 255, .1),
+                0 0 0 7rem rgba(255, 255, 255, .15),
+                0 0 0 10.5rem rgba(255, 255, 255, .125);
+    overflow: hidden;
+    transition: left var(--transition);
+
+    z-index: 3;
+
+  }
+
+  .moon {
+    position: absolute;
+    top: 0;
+    right: -36rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background: var(--moon);
+    box-shadow: inset .3rem .3rem .4rem 0 #FFFFFF,
+                inset -.3rem .5rem .4rem 0 rgba(0, 0, 0, .4);
+
+    transition: right var(--transition);
+
+    .crater {
+      position: absolute;
+      border-radius: 50%;
+      background-color: var(--moon-crater);
+      box-shadow: inset 0 1px .4rem 0 rgba(0, 0, 0, .25);
+
+      &:nth-child(1) {
+        top: 2rem;
+        left: 5.5rem;
+        width: 2rem;
+        height: 2rem;
+      }
+      &:nth-child(2) {
+        top: 5.5rem;
+        left: 2rem;
+        width: 4rem;
+        height: 4rem;
+      }
+      &:nth-child(3) {
+        top: 6.5rem;
+        left: 8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  .clouds {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: top var(--transition);
+
+    &--blue {
+      left: -3rem;
+      top: -1rem;
+    }
+
+    &--blue .cloud {
+      background-color: var(--cloud-shadow);
+      z-index: 1;
+    }
+
+    &--white .cloud {
+      background-color: #FFFFFF;
+      z-index: 2;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        bottom: -3.5rem;
+        left: -2rem;
+      }
+      &:nth-child(2) {
+        bottom: -6.5rem;
+        left: 3.5rem;
+      }
+      &:nth-child(3) {
+        bottom: -6rem;
+        left: 9rem;
+      }
+      &:nth-child(4) {
+        bottom: -6rem;
+        left: 13.5rem;
+      }
+      &:nth-child(5) {
+        bottom: -4.5rem;
+        left: 18rem;
+      }
+      &:nth-child(6) {
+        bottom: -4.5rem;
+        left: 23rem;
+      }
+      &:nth-child(7) {
+        bottom: -2rem;
+        right: .5rem;
+      }
+      &:nth-child(8) {
+        bottom: 1.8rem;
+        right: -4rem;
+      }
+      &:nth-child(9) {
+        top: -2rem;
+        right: -2.5rem;
+      }
+    }
+  }
+
+  .stars {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+
+    transition: top var(--transition);
+
+    .star--four {
+      position: absolute;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: var(--star);
+        width: 1rem;
+        height: 1.15rem;
+        transform: rotate(-45deg) skewX(22.5deg) skewY(22.5deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: var(--star);
+        width: 1rem;
+        height: 1.15rem;
+        transform: rotate(45deg) skewX(22.5deg) skewY(22.5deg);
+      }
+
+      &:nth-child(1) {
+        top: 5.5rem;
+        left: 3.5rem;
+
+        &::before,
+        &::after {
+          width: .5rem;
+          height: .65rem;
+        }
+      }
+      &:nth-child(2) {
+        top: 3rem;
+        left: 8rem;
+
+        &::before,
+        &::after {
+          width: 1rem;
+          height: 1.15rem;
+        }
+      }
+      &:nth-child(3) {
+        bottom: 3.5rem;
+        left: 6rem;
+
+        &::before,
+        &::after {
+          width: .4rem;
+          height: .45rem;
+        }
+      }
+      &:nth-child(4) {
+        top: 5.5rem;
+        left: 14rem;
+
+        &::before,
+        &::after {
+          width: .4rem;
+          height: .45rem;
+        }
+      }
+      &:nth-child(5) {
+        bottom: 4.5rem;
+        left: 15rem;
+
+        &::before,
+        &::after {
+          width: .4rem;
+          height: .45rem;
+        }
+      }
+      &:nth-child(6) {
+        top: 3rem;
+        left: 18.5rem;
+
+        &::before,
+        &::after {
+          width: .5rem;
+          height: .65rem;
+        }
+      }
+    }
+
+    .star {
+      position: absolute;
+      width: .25rem;
+      height: .25rem;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+
+      z-index: 1;
+
+      &:nth-child(7) {
+        bottom: 4.5rem;
+        left: 2.8rem;
+      }
+      &:nth-child(8) {
+        top: 7.5rem;
+        left: 7.5rem;
+        width: .5rem;
+        height: .5rem;
+      }
+      &:nth-child(9) {
+        bottom: 4.5rem;
+        left: 10.5rem;
+        width: .4rem;
+        height: .4rem;
+      }
+      &:nth-child(10) {
+        top: 7.5rem;
+        left: 20rem;
+        width: .3rem;
+        height: .3rem;
+      }
+    }
+  }
+}
+

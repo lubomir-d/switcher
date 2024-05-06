@@ -1,0 +1,26 @@
+{
+  "name": "switcher",
+  "version": "1.0.0",
+  "description": "Markup of Day/Night switcher",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ljubomir Dolgopolov",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "delete": "^1.1.0",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "postcss-current-selector": "^0.0.3",
+    "postcss-nested": "^6.0.1",
+    "postcss-nested-ancestors": "^3.0.0",
+    "postcss-nesting": "^12.1.2"
+  }
+}

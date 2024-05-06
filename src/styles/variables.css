@@ -1,0 +1,11 @@
+:root {
+  --bg-day: #3572AF;
+  --bg-night: #1B1E2A;
+  --sun: #F7C024;
+  --cloud-shadow: #ACC9E6;
+  --moon: #C2CAD1;
+  --moon-crater: #959BA9;
+  --star: #FFFFFF;
+
+  --transition: 1.5s cubic-bezier(.31,.17,.14,1.11);
+}
